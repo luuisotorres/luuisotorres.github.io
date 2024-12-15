@@ -441,11 +441,24 @@ main {
 .social-item .social-link {
   color: var(--light-gray-70);
   font-size: 18px;
+  display: flex;  
+  align-items: center;
 }
 
+.social-item .social-link:hover { 
+  color: var(--light-gray); 
+}
 
-.social-item .social-link:hover { color: var(--light-gray); }
+.social-item .social-link img {
+  width: 18px;  
+  height: 18px;
+  filter: opacity(0.7);  
+  transition: filter var(--transition-1); 
+}
 
+.social-item .social-link:hover img {
+  filter: opacity(1) brightness(1.25);  
+}
 
 
 
