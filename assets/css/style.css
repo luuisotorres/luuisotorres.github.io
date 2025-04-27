@@ -1162,81 +1162,61 @@ main {
 
 .form-title { margin-bottom: 20px; }
 
-.input-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 25px;
-  margin-bottom: 25px;
+.contact-form form {
+  margin-top: 20px;
 }
 
-.form-input {
-  color: var(--white-2);
+.contact-form label {
+  color: var(--light-gray);
+  display: block;
+  margin-bottom: 8px;
   font-size: var(--fs-6);
-  font-weight: var(--fw-400);
-  padding: 13px 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  background-color: #ffffffdd;
+  color: var(#000000);
   border: 1px solid var(--jet);
-  border-radius: 14px;
+  padding: 12px;
+  font-family: var(--ff-poppins);
+  font-weight: var(--fw-400);
+  font-size: var(--fs-6);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  width: 100%;
+  resize: vertical;
+}
+
+.contact-form input[type="text"]::placeholder,
+.contact-form input[type="email"]::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--light-gray);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--orange-yellow-crayola);
   outline: none;
 }
 
-.form-input::placeholder { font-weight: var(--fw-500); }
-
-.form-input:focus { border-color: var(--orange-yellow-crayola); }
-
-textarea.form-input {
-  min-height: 100px;
-  height: 120px;
-  max-height: 200px;
-  resize: vertical;
-  margin-bottom: 25px;
-}
-
-textarea.form-input::-webkit-resizer { display: none; }
-
-.form-input:focus:invalid { border-color: var(--bittersweet-shimmer); }
-
-.form-btn {
-  position: relative;
-  width: 100%;
-  background: var(--border-gradient-onyx);
-  color: var(--orange-yellow-crayola);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 20px;
-  border-radius: 14px;
+.contact-form button.form-submit-btn {
+  background-color: var(--orange-yellow-crayola);
+  color: var(--eerie-black-2);
+  font-weight: var(--fw-500);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
   font-size: var(--fs-6);
-  text-transform: capitalize;
-  box-shadow: var(--shadow-3);
-  z-index: 1;
-  transition: var(--transition-1);
+  transition: background-color 0.3s ease;
 }
 
-.form-btn::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  background: var(--bg-gradient-jet);
-  border-radius: inherit;
-  z-index: -1;
-  transition: var(--transition-1);
+.contact-form button.form-submit-btn:hover {
+  background-color: var(--vegas-gold);
 }
 
-.form-btn ion-icon { font-size: 16px; }
-
-.form-btn:hover { background: var(--bg-gradient-yellow-1); }
-
-.form-btn:hover::before { background: var(--bg-gradient-yellow-2); }
-
-.form-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.form-btn:disabled:hover { background: var(--border-gradient-onyx); }
-
-.form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
 
 
