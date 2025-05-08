@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Luis Fernando Torres, an AI & Data Science Specialist with expertise in Python, SQL, AML/FT, and U.S. compliance. Explore projects, resume, and blog.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>Luis Fernando Torres - AI | Data Science | Python | SQL | AML/FT</title>
 
@@ -304,54 +304,7 @@
           </ul>
 
         </section>
-
-
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-            
-            </div>
-
-            <div class="modal-content">
-
-
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-
-          
-
-        </section>
-
       </article>
-
-
-
-
 
       <!--
         - #RESUME
@@ -753,6 +706,24 @@
 
           <ul class="project-list">
             <li class="project-item  active" data-filter-item data-category="web apps">
+              <a href="https://github.com/luuisotorres/fastapi-iris-predictor">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/project-21.png" alt="orizon" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">FastAPI Iris Flower Predictor</h3>
+
+                <p class="project-category">Web Apps</p>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web apps">
               <a href="https://github.com/luuisotorres/capytrader-ai">
 
                 <figure class="project-img">
@@ -1128,7 +1099,7 @@
   
   <section class="blog-posts">
     <ul class="blog-posts-list" id="medium-posts">
-      <iframe src='https://widgets.sociablekit.com/medium-publication-feed/iframe/25377786' frameborder='0' width='200%' height='1000'></iframe>
+      <li class="loading-message">Loading posts...</li>
     </ul>
   </section>
 </article>
@@ -1145,7 +1116,7 @@
 
         <section class="contact-form">
 
-          <h3 class="h3 form-title">🔗 Let's Connect!</h3>
+          <h3 class="h3 form-title">Let's Connect!</h3>
 
           <section class="about-text">
             <p>
@@ -1154,27 +1125,35 @@
             </p>
           </section>
 
-          <form action="mailto:luuisotorres@icloud.com" method="POST" enctype="text/plain" class="form">
+          <form id="contactForm" action="https://formspree.io/f/xjkwrlyr" method="POST" class="form">
             <div class="form-group">
               <label for="name">Name:</label>
-              <input type="text" id="name" name="name" required>
+              <!-- Ensure 'name' attribute matches the field name -->
+              <input type="text" id="name" name="name" required data-form-input>
             </div>
 
             <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required>
+              <!-- Use 'email' as the name attribute for the reply-to functionality -->
+              <input type="email" id="email" name="email" required data-form-input>
             </div>
 
             <div class="form-group">
               <label for="message">Message:</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
+              <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio!">
+              <textarea id="message" name="message" rows="5" required data-form-input></textarea>
             </div>
 
-            <button type="submit" class="form-submit-btn">Send Message</button>
+            <!-- Honeypot field for basic spam protection -->
+            <input type="text" name="_gotcha" style="display:none !important">
+
+            <!-- This button will now be handled by JavaScript for AJAX submission -->
+            <button type="submit" class="form-submit-btn" data-form-btn disabled>Send Message</button>
           </form>
+          <!-- For displaying form status messages -->
+          <p id="form-status" class="form-status-message" style="margin-top: 15px; text-align: center;"></p>
 
         </section>
-
       </article>
 
     </div>

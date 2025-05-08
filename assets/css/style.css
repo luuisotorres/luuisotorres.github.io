@@ -1878,3 +1878,109 @@ main {
   .timeline-text { max-width: 700px; }
 
 }
+
+.blog-posts-list {
+  list-style: none;
+  padding: 0;
+  display: grid; /* Using grid for layout */
+  grid-template-columns: 1fr; /* Single column by default for mobile */
+  gap: 30px; /* Space between blog posts */
+}
+
+.blog-post-item {
+  background: var(--eerie-black-2); /* Or your card background color */
+  border-radius: var(--border-radius-md); /* Or your standard border radius */
+  padding: 20px;
+  border: 1px solid var(--jet); /* Or your border color */
+  box-shadow: var(--shadow-1); /* Or your standard shadow */
+  display: flex; /* For aligning thumbnail and content */
+  flex-direction: column; /* Stack image and content vertically on small screens */
+  gap: 15px;
+}
+
+.blog-post-thumbnail {
+  width: 100%; /* Full width within its flex container part */
+  max-height: 250px; /* Limit height */
+  object-fit: cover; /* Cover the area nicely */
+  border-radius: var(--border-radius-sm); /* Slight rounding for the image */
+  margin-bottom: 15px; /* Space below image if stacked */
+}
+
+.blog-post-content {
+  flex-grow: 1; /* Content takes remaining space if next to thumbnail */
+}
+
+.blog-post-title a {
+  color: var(--white-2); /* Or your title color */
+  text-decoration: none;
+  font-size: var(--fs-4); /* Adjust as needed */
+}
+
+.blog-post-title a:hover {
+  color: var(--orange-yellow-crayola); /* Or your hover color */
+  text-decoration: underline;
+}
+
+.blog-post-date {
+  font-size: var(--fs-7); /* Smaller font for date */
+  color: var(--light-gray-70); /* Lighter color for date */
+  margin-bottom: 10px;
+  display: block;
+}
+
+.blog-post-snippet {
+  font-size: var(--fs-6);
+  color: var(--light-gray); /* Or your text color */
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.blog-post-readmore {
+  font-size: var(--fs-7);
+  color: var(--orange-yellow-crayola); /* Accent color */
+  text-decoration: none;
+  font-weight: var(--fw-500);
+}
+
+.blog-post-readmore:hover {
+  text-decoration: underline;
+}
+
+.loading-message,
+#medium-posts li:only-child { /* Style for single messages like "No posts found" */
+  text-align: center;
+  padding: 20px;
+  color: var(--light-gray);
+  font-size: var(--fs-5);
+}
+
+
+/* Responsive adjustments for blog posts */
+@media (min-width: 768px) {
+  .blog-post-item {
+    flex-direction: row; /* Image beside content on larger screens */
+  }
+
+  .blog-post-thumbnail {
+    width: 200px; /* Fixed width for thumbnail */
+    height: auto; /* Adjust height automatically */
+    max-height: 180px;
+    margin-bottom: 0; /* No margin if side-by-side */
+    margin-right: 20px; /* Space between thumbnail and content */
+    flex-shrink: 0; /* Prevent thumbnail from shrinking */
+  }
+}
+
+@media (min-width: 992px) {
+  /* Optional: two-column layout for blog posts on larger screens */
+  /* .blog-posts-list {
+    grid-template-columns: repeat(2, 1fr);
+  } */
+}
+
+.form-status-message {
+  font-size: var(--fs-6); /* Or your preferred size */
+  margin-top: 15px;
+  text-align: center;
+  min-height: 1.5em; /* Reserve space to prevent layout jump */
+}
