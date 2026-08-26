@@ -956,6 +956,46 @@ main {
   line-height: 1.7;
 }
 
+.timeline-location {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.timeline-location ion-icon {
+  color: var(--vegas-gold);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.timeline-location > span {
+  font-size: var(--fs-8);
+  color: var(--light-gray-70);
+  margin-bottom: 0;
+}
+
+.work-mode {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: var(--fw-500);
+  padding: 1px 8px;
+  border-radius: 20px;
+  line-height: 1.6;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+.work-mode--remote {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34d399;
+}
+
+.work-mode--onsite {
+  background: rgba(96, 165, 250, 0.15);
+  color: #60a5fa;
+}
+
 .smaller-text {
   font-size: .9em;
 }
